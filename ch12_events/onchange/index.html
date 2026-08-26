@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Country Information</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+    <h1>🌍 Country Information</h1>
+
+    <div class="selector">
+        <label for="country">Choose a Country</label>
+
+        <select id="country" onchange="showCountryInfo()">
+            <option value="">-- Select a Country --</option>
+            <option value="somalia">Somalia</option>
+            <option value="japan">Japan</option>
+            <option value="canada">Canada</option>
+            <option value="brazil">Brazil</option>
+            <option value="egypt">Egypt</option>
+            <option value="france">France</option>
+        </select>
+    </div>
+
+    <div id="info" class="card">
+        <h2>Select a country</h2>
+        <p>Information will appear here.</p>
+    </div>
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
+
