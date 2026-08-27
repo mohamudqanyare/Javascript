@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>JavaScript Modules — Export & Import</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <div class="app-shell">
+
+    <!-- ================= HEADER ================= -->
+    <header class="hero">
+
+      <div class="badge">
+        ES MODULES
+      </div>
+
+      <h1>
+        Export & <span>Import</span>
+      </h1>
+
+      <p>
+        Explore how JavaScript modules share functions,
+        variables, and classes between different files.
+      </p>
+
+    </header>
+
+
+    <main class="container">
+
+      <!-- ================= EXAMPLES ================= -->
+
+      <section class="demo-grid">
+
+        <!-- EXPORT CARD -->
+        <article class="card">
+
+          <div class="card-icon">
+            📦
+          </div>
+
+          <h2>
+            1. Export
+          </h2>
+
+          <p>
+            A module makes code available to other files
+            using the <code>export</code> keyword.
+          </p>
+
+          <pre><code>// math.js
+
+export const PI = 3.14159;
+
+export function add(a, b) {
+  return a + b;
+}</code></pre>
+
+        </article>
+
+
+        <!-- IMPORT CARD -->
+        <article class="card">
+
+          <div class="card-icon">
+            📥
+          </div>
+
+          <h2>
+            2. Import
+          </h2>
+
+          <p>
+            Another module receives exported code
+            using the <code>import</code> keyword.
+          </p>
+
+          <pre><code>// app.js
+
+import { PI, add } from "./math.js";
+
+console.log(PI);
+console.log(add(10, 5));</code></pre>
+
+        </article>
+
+      </section>
+
+
+      <!-- ================= LIVE DEMO ================= -->
+
+      <section class="playground card">
+
+        <div class="section-heading">
+
+          <div>
+
+            <span class="eyebrow">
+              LIVE DEMO
+            </span>
+
+            <h2>
+              Modules Working Together
+            </h2>
+
+          </div>
+
+          <button id="runDemo">
+            ▶ Run Demo
+          </button>
+
+        </div>
+
+
+        <!-- MODULE FLOW -->
+
+        <div class="module-flow">
+
+          <!-- math.js -->
+          <div class="module-box export-box">
+
+            <span class="file-label">
+              math.js
+            </span>
+
+            <strong>
+              EXPORT
+            </strong>
+
+            <p>
+              add(), multiply(), PI
+            </p>
+
+          </div>
+
+
+          <div class="arrow">
+            →
+          </div>
+
+
+          <!-- app.js -->
+          <div class="module-box import-box">
+
+            <span class="file-label">
+              app.js
+            </span>
+
+            <strong>
+              IMPORT
+            </strong>
+
+            <p>
+              Receives the exported code
+            </p>
+
+          </div>
+
+
+          <div class="arrow">
+            →
+          </div>
+
+
+          <!-- Browser -->
+          <div class="module-box result-box">
+
+            <span class="file-label">
+              Browser
+            </span>
+
+            <strong>
+              RESULT
+            </strong>
+
+            <p id="flowResult">
+              Click Run Demo
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <!-- CONSOLE -->
+
+        <div class="console">
+
+          <div class="console-top">
+
+            <span>
+              Console Output
+            </span>
+
+            <button id="clearConsole">
+              Clear
+            </button>
+
+          </div>
+
+          <div id="output">
+            Ready to run the module demo...
+          </div>
+
+        </div>
+
+      </section>
+
+
+      <!-- ================= CONCEPTS ================= -->
+
+      <section class="card concepts">
+
+        <div class="section-heading">
+
+          <div>
+
+            <span class="eyebrow">
+              KEY CONCEPTS
+            </span>
+
+            <h2>
+              What You Should Remember
+            </h2>
+
+          </div>
+
+        </div>
+
+
+        <div class="concept-grid">
+
+          <!-- CONCEPT 1 -->
+
+          <div class="concept">
+
+            <span>
+              01
+            </span>
+
+            <h3>
+              Named Export
+            </h3>
+
+            <code>
+              export function add() {}
+            </code>
+
+            <p>
+              Import it using its exact exported name.
+            </p>
+
+          </div>
+
+
+          <!-- CONCEPT 2 -->
+
+          <div class="concept">
+
+            <span>
+              02
+            </span>
+
+            <h3>
+              Named Import
+            </h3>
+
+            <code>
+              import { add } from "./math.js"
+            </code>
+
+            <p>
+              Use curly braces for named exports.
+            </p>
+
+          </div>
+
+
+          <!-- CONCEPT 3 -->
+
+          <div class="concept">
+
+            <span>
+              03
+            </span>
+
+            <h3>
+              Default Export
+            </h3>
+
+            <code>
+              export default User
+            </code>
+
+            <p>
+              A module can have one default export.
+            </p>
+
+          </div>
+
+
+          <!-- CONCEPT 4 -->
+
+          <div class="concept">
+
+            <span>
+              04
+            </span>
+
+            <h3>
+              Module Script
+            </h3>
+
+            <code>
+              &lt;script type="module"&gt;
+            </code>
+
+            <p>
+              This tells the browser to treat the file as a module.
+            </p>
+
+          </div>
+
+        </div>
+
+      </section>
+
+    </main>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+      <p>
+        JavaScript ES Modules • Export → Import → Use
+      </p>
+
+    </footer>
+
+  </div>
+
+
+  <!-- IMPORTANT:
+       type="module" enables JavaScript modules -->
+
+  <script
+    type="module"
+    src="app.js">
+  </script>
+
+</body>
+</html>
